@@ -10,7 +10,7 @@ const main = async () => {
   console.log("\n\n 📡 Deploying...\n");
 
 
-  const yourContract = await deploy("YourContract") // <-- add in constructor args like line 16 vvvv
+  const SPORK = await deploy("SPORK") // <-- add in constructor args like line 16 vvvv
 
 
 
@@ -22,7 +22,7 @@ const main = async () => {
 
   //If you want to send some ETH to a contract on deploy (make your constructor payable!)
 
-  const yourContract = await deploy("YourContract", [], {
+  const SPORK = await deploy("SPORK", [], {
   value: ethers.utils.parseEther("0.05")
   });
   */

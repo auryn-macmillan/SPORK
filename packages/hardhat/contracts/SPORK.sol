@@ -19,7 +19,7 @@ contract SPORK is Ownable {
     string public name     = "Sporks";
     string public symbol   = "SPORK";
     uint8  public decimals = 18;
-    address public recipient;
+    address payable public recipient;
 
     event  Approval(address indexed src, address indexed guy, uint wad);
     event  Transfer(address indexed src, address indexed dst, uint wad);
@@ -28,16 +28,16 @@ contract SPORK is Ownable {
     mapping (address => uint)                       public  balanceOf;
     mapping (address => mapping (address => uint))  public  allowance;
 
-    function setRecipient(address _recipient) public onlyOwner {
+    function setRecipient(address payable _recipient) public onlyOwner {
       recipient = _recipient;
     }
 
-    fallback() external {
+    fallback() external payable {
         deposit();
     }
     function deposit() public payable {
         balanceOf[msg.sender] += msg.value;
-        address(0).transfer(msg.value);
+        recipient.transfer(msg.value);
         emit Deposit(msg.sender, msg.value);
     }
 

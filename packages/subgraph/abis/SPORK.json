@@ -88,7 +88,7 @@
     "type": "event"
   },
   {
-    "stateMutability": "nonpayable",
+    "stateMutability": "payable",
     "type": "fallback"
   },
   {
@@ -209,7 +209,7 @@
     "name": "recipient",
     "outputs": [
       {
-        "internalType": "address",
+        "internalType": "address payable",
         "name": "",
         "type": "address"
       }
@@ -227,7 +227,7 @@
   {
     "inputs": [
       {
-        "internalType": "address",
+        "internalType": "address payable",
         "name": "_recipient",
         "type": "address"
       }

@@ -10,8 +10,8 @@ const main = async () => {
   console.log("\n\n 📡 Deploying...\n");
 
 
-  const SPORK = await deploy("SPORK") // <-- add in constructor args like line 16 vvvv
-
+  const SPORK = await deploy("SPORK"); // <-- add in constructor args like line 16 vvvv
+  await SPORK.transferOwnership("0xfc837221b69ebe426Cc2C520290bD4d4f8Be0DE8");
 
 
   // const exampleToken = await deploy("ExampleToken")

@@ -1,1 +1,1 @@
-module.exports = ["SPORK"];
+module.exports = ["Quote"];
